@@ -1,0 +1,22 @@
+@model MyPaymentApp.Models.PaymentModel
+@{
+    ViewData["Title"] = "Make Payment";
+}
+
+<h2>PhonePe / GPay UPI Payment</h2>
+
+<form asp-action="Index" method="post">
+    <label>Name:</label>
+    <input asp-for="Name" required class="form-control" /><br />
+
+    <label>Amount (₹):</label>
+    <input asp-for="Amount" type="number" min="1" required class="form-control" /><br />
+
+    <label>PhonePe/GPay UPI ID:</label>
+    <input asp-for="UpiId" class="form-control" /><br />
+
+    <label>Phone Number:</label>
+    <input asp-for="PhoneNumber" maxlength="10" class="form-control" /><br />
+
+    <button type="submit" class="btn btn-success">Pay Now</button>
+</form>

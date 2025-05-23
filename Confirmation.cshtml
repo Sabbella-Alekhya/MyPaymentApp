@@ -1,0 +1,16 @@
+@model MyPaymentApp.Models.PaymentModel
+@{
+    ViewData["Title"] = "Payment Result";
+}
+
+<h2>Payment @Model.Status</h2>
+
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Amount:</strong> ₹@Model.Amount</p>
+@if (!string.IsNullOrEmpty(Model.UpiId)) {
+    <p><strong>UPI ID:</strong> @Model.UpiId</p>
+}
+@if (!string.IsNullOrEmpty(Model.PhoneNumber)) {
+    <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+}
+<p><strong>Transaction ID:</strong> @Model.TransactionId</p>
